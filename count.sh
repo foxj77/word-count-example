@@ -10,11 +10,15 @@ if [ ! -f "$1" ]; then
 fi
 
 # Get the total word count
-total_words=$(cat "$1" | tr -sc 'A-Za-z' '\n' | wc -l)
+total_words=$(cat "$1" | tr -s ' ' '\n' | wc -l)
+
+# Get the total unique word count
+total_unique_words=$(cat "$1" | tr -s ' ' '\n' | tr 'A-Z' 'a-z' | sort | uniq | wc -l)
 
 # Print the filename and total word count
 echo "File: $1"
 echo "Total word count: $total_words"
+echo "Total unique word count: $total_unique_words"
 
 # Print the header using printf for alignment
 printf "%-5s %-25s %s\n" "No." "Word" "Occurrences"
