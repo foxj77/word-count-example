@@ -9,6 +9,13 @@ if [ ! -f "$1" ]; then
   exit 1
 fi
 
+# Get the total word count
+total_words=$(cat "$1" | tr -sc 'A-Za-z' '\n' | wc -l)
+
+# Print the filename and total word count
+echo "File: $1"
+echo "Total word count: $total_words"
+
 # Print the header using printf for alignment
 printf "%-5s %-25s %s\n" "No." "Word" "Occurrences"
 
