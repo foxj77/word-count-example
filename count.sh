@@ -20,4 +20,5 @@ echo "Total word count: $total_words"
 printf "%-5s %-25s %s\n" "No." "Word" "Occurrences"
 
 # Process the file to count unique words and their occurrences, sorted by frequency
-cat "$1" | tr -sc 'A-Za-z' '\n' | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | awk '{printf "%-5s %-25s %s\n", NR".", $2, $1}'
+# Add 'sed -e '/^$/d'' to remove blank lines
+cat "$1" | tr -sc 'A-Za-z' '\n' | sed -e '/^$/d' | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | awk '{printf "%-5s %-25s %s\n", NR".", $2, $1}'
