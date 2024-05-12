@@ -1,3 +1,8 @@
+- FIX: adding asumption for handling of hyphenated words
+- FEAT: adding additional tests
+- FEAT: adding test with same words but in different order to ensure results same
+- FEAT: adding testing instructions
+- FEAT: adding changelog as ready for first release
 - FIX: missing shebang as goodpractice
 - FEAT: adding sample data same as what is used in test1 so can run it manually to see the results
 - FIX: resolved empty file failing tests
