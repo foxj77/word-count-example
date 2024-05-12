@@ -12,13 +12,13 @@
   
   # Test output
   [ "$status" -eq 0 ]
-  [ "${lines[2]}" = "Total word count: 4" ]
-  [ "${lines[3]}" = "Total unique word count: 4" ]
-  [ "${lines[5]}" = "No.   Word                     Occurrences" ]
-  [ "${lines[6]}" = "1.    world                    1" ]
-  [ "${lines[7]}" = "2.    mat                      1" ]
-  [ "${lines[8]}" = "3.    hello                    1" ]
-  [ "${lines[9]}" = "3.    cat                      1" ]
+  [ "${lines[1]}" = "Total word count: 4" ]
+  [ "${lines[2]}" = "Total unique word count: 4" ]
+  [ "${lines[3]}" = "No.   Word                      Occurrences" ]
+  [ "${lines[4]}" = "1.    world                     1" ]
+  [ "${lines[5]}" = "2.    mat                       1" ]
+  [ "${lines[6]}" = "3.    hello                     1" ]
+  [ "${lines[7]}" = "4.    cat                       1" ]
   
   # Clean up
   rm "$temp_file"
@@ -33,8 +33,8 @@
 
   # Check the outputs
   [ "$status" -eq 0 ]
-  [ "${lines[2]}" = "Total word count: 0" ]
-  [ "${lines[3]}" = "Total unique word count: 0" ]
+  [ "${lines[1]}" = "Total word count: 0" ]
+  [ "${lines[2]}" = "Total unique word count: 0" ]
 
   # Clean up
   rm "$temp_file"
