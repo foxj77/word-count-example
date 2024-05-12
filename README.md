@@ -95,8 +95,10 @@ Sample output of test results/output:
 ```
 ~/word-count-example$ bats  ./tests/
  ✓ Test with a regular file 
+ ✓ Test with a same regular file in different order 
+ ✓ Test with special characters 
  ✓ Test with empty file 
  ✓ Test with non-existing file 
 
-3 tests, 0 failures
+5 tests, 0 failures
 ```
