@@ -7,6 +7,8 @@ The script is designed to handle words with possessive endings ('s) by treating 
 
 All words are processed in a case-insensitive manner to ensure that 'Word' and 'word' are counted as the same word.
 
+Hyphenated words are broken into two and counted separately.
+
 ## Features
 - **Total Word Count:** Calculates how many words are in the file.
 - **Total Unique Word Count:** Calculates how many unique words are in the file.
