@@ -1,7 +1,11 @@
 # word-count-example
 
 ## Description
-This script processes a text file to provide a word count analysis. It counts the total number of words, the total number of unique words, and provides a frequency count of each word, sorted from the most to the least frequent. The script is designed to handle words with possessive endings ('s) by treating them as the non-possessive form of the word. All words are processed in a case-insensitive manner to ensure that 'Word' and 'word' are counted as the same word.
+This script processes a text file to provide a word count analysis. It counts the total number of words, the total number of unique words, and provides a frequency count of each word, sorted from the most to the least frequent. 
+
+The script is designed to handle words with possessive endings ('s) by treating them as the non-possessive form of the word. 
+
+All words are processed in a case-insensitive manner to ensure that 'Word' and 'word' are counted as the same word.
 
 ## Features
 - **Total Word Count:** Calculates how many words are in the file.
@@ -58,3 +62,41 @@ If no arguments are provided or the specified file does not exist, the script wi
 ## Error Messages
 If no file is provided: "Usage: count.sh <file>"
 If the file does not exist: "Error: File does not exist."
+
+## Testing
+
+This project uses [Bats](https://github.com/bats-core/bats-core) (Bash Automated Testing System) for testing. Follow these instructions to run the tests.
+
+### Prerequisites
+
+First, ensure you have Bats installed. You can install Bats on most systems with the following commands
+
+
+
+- on Ubuntu
+```
+sudo apt-get install bats
+```
+
+- on Mac
+```
+brew install bats-core
+```
+### Run Bats tests
+
+``` bash
+bats tests/
+```
+This will execute all Bats tests located in the tests folder and provide a report of any tests that fail along with successful ones.
+
+Currently there are 3 test cases and these will be added to and be used as part of a continuation integration setup when changes are merged into main.  Due to time restraints just ensured the tests are added and can execute them.
+
+Sample output of test results/output:
+```
+~/word-count-example$ bats  ./tests/
+ ✓ Test with a regular file 
+ ✓ Test with empty file 
+ ✓ Test with non-existing file 
+
+3 tests, 0 failures
+```
