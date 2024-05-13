@@ -75,7 +75,7 @@ teardown() {
   [ "${lines[0]}" = "Error: File does not exist." ]
 }
 
-@test "Test with Hyphens and Punctuation" {
+@test "Test with hyphens and punctuation" {
     echo "state-of-the-art high-quality it's isn't end." > "$temp_file"
     run bash count.sh "$temp_file"
     [ "$status" -eq 0 ]
