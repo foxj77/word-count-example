@@ -37,5 +37,6 @@ printf "%-5s %-25s %s\n" "No." "Word" "Occurrences"
 # Process the file to count unique words and their occurrences, sorted by frequency
 # Only print if there are words
 if [ $total_words -gt 0 ]; then
+    # Output 'processed_content': sort lines, count duplicates, sort by count desc, format with line numbers.
     echo "$processed_content" | sort | uniq -c | sort -nr | awk '{printf "%-5s %-25s %s\n", NR".", $2, $1}'
 fi
