@@ -9,6 +9,8 @@ All words are processed in a case-insensitive manner to ensure that 'Word' and '
 
 Hyphenated words are broken into two and counted separately.
 
+Unicode characters, emoticons, are not supported and therefore not counted as a word.
+
 ## Features
 - **Total Word Count:** Calculates how many words are in the file.
 - **Total Unique Word Count:** Calculates how many unique words are in the file.
