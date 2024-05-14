@@ -1,9 +1,9 @@
 # word-count-example
 
 ## Description
-This script processes a text file to provide a word count analysis. It counts the total number of words, the total number of unique words, and provides a frequency count of each word, sorted from the most to the least frequent. 
+This script processes a text file to provide a word count analysis. It counts the total number of words, the total number of unique words, and provides a frequency count of each word, sorted from the most to the least frequent.
 
-The script is designed to handle words with possessive endings ('s) by treating them as the non-possessive form of the word. 
+The script is designed to handle words with possessive endings ('s) by treating them as the non-possessive form of the word.
 
 All words are processed in a case-insensitive manner to ensure that 'Word' and 'word' are counted as the same word.
 
@@ -22,7 +22,7 @@ Unicode characters, emoticons, are not supported and therefore not counted as a 
 - Basic utilities: grep, sed, tr, wc, awk, sort
 
 ## Usage
-To run the script, you need to pass a single text file as an argument. However, before executing the script, ensure it has the necessary executable permissions.
+To run the script, you need to pass a single text file as an argument. However, before executing the script, ensure it has the necessary executable permissions. 
 
 ### Setting Executable Permissions
 If the script does not already have executable permissions, you can set them using the following command:
