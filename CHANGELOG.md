@@ -1,3 +1,9 @@
+## v0.1.2 release
+- FEAT: improving readability of readme and instructions
+- adding gh actions
+- Merge pull request #2 from foxj77/jf/feat/testImprovements
+- update to changelog
+
 ## v0.1.1 release
 - FIX: capitalisation of test report
 - FEAT: adding emoticon sample data

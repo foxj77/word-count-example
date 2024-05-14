@@ -3,13 +3,14 @@
 ## Description
 This script processes a text file to provide a word count analysis. It counts the total number of words, the total number of unique words, and provides a frequency count of each word, sorted from the most to the least frequent. 
 
-The script is designed to handle words with possessive endings ('s) by treating them as the non-possessive form of the word. 
 
-All words are processed in a case-insensitive manner to ensure that 'Word' and 'word' are counted as the same word.
+- The script is designed to handle words with possessive endings ('s) by treating them as the non-possessive form of the word. 
 
-Hyphenated words are broken into two and counted separately.
+- All words are processed in a case-insensitive manner to ensure that 'Word' and 'word' are counted as the same word.
 
-Unicode characters, emoticons, are not supported and therefore not counted as a word.
+- Hyphenated words are broken into two and counted separately.
+
+- Unicode characters, emoticons, are not supported and therefore not counted as a word.
 
 ## Features
 - **Total Word Count:** Calculates how many words are in the file.
@@ -24,85 +25,105 @@ Unicode characters, emoticons, are not supported and therefore not counted as a 
 ## Usage
 To run the script, you need to pass a single text file as an argument. However, before executing the script, ensure it has the necessary executable permissions.
 
+Firstly clone the repository locally using the git command `git clone https://github.com/foxj77/word-count-example.git` or follow the instructions from Github.
+
 ### Setting Executable Permissions
 If the script does not already have executable permissions, you can set them using the following command:
 
 ```bash
 chmod +x count.sh
 ```
-
 This command makes the script executable and ready to run.
 
 ### Executing the Script
 Here is how to execute the script from a terminal:
 
 ```bash
-./count.sh path_to_your_file.txt
+./count.sh sampleData/data.txt
 ```
-Replace path_to_your_file.txt with the actual path to the text file you wish to analyze.
 
-### Example Command
-```bash
-./count.sh sample.txt
-```
 
 ### Output
 The script outputs:
-
-The name of the file processed.
-Total word count in the file.
-Total unique word count.
-A table listing words, sorted by their frequency of occurrence, formatted as follows:
+  - The name of the file processed.
+  - Total word count in the file.
+  - Total unique word count.
+  - A table listing words, sorted by their frequency of occurrence, formatted as follows:
 
 ```bash
-No.   Word                     Occurrences
-1.    example                  15
-2.    test                     10
+File: sampleData/data.txt
+Total word count: 225
+Total unique word count: 153
+No.   Word                      Occurrences
+1.    a                         6
+2.    ut                        5
+3.    lorem                     4
+4.    in                        4
+5.    et                        4
+6.    elit                      4
+7.    consequat                 4
+8.    tempor                    3
+9.    sapien                    3
 ```
 
 ## Error Handling
 If no arguments are provided or the specified file does not exist, the script will output an appropriate error message guiding you to correct usage.
 
 ## Error Messages
-If no file is provided: "Usage: count.sh <file>"
-If the file does not exist: "Error: File does not exist."
+If no file is provided: 
+`"Usage: count.sh <file>"`
+
+If the file does not exist: 
+`"Error: File does not exist."`
 
 ## Testing
 
-This project uses [Bats](https://github.com/bats-core/bats-core) (Bash Automated Testing System) for testing. Follow these instructions to run the tests.
+This project uses [Bats](https://github.com/bats-core/bats-core) (Bash Automated Testing System) for testing. 
 
-### Prerequisites
+Tests can be run manually with the instructions below.  Otherwise the tests will be executed on a PR into main using a Github Actions workflow.  
+
+### Prerequisites for running locally
 
 First, ensure you have Bats installed. You can install Bats on most systems with the following commands
-
-
 
 - on Ubuntu
 ```
 sudo apt-get install bats
 ```
-
 - on Mac
 ```
 brew install bats-core
 ```
-### Run Bats tests
 
-``` bash
+Follow these steps to run the Bats tests:
+
+1. Open a terminal.
+2. Navigate to the project directory with `cd path/to/project`.
+3. Run the tests with the following command:
+
+```bash
 bats tests/
 ```
-This will execute all Bats tests located in the tests folder and provide a report of any tests that fail along with successful ones.
 
-Currently there are 3 test cases and these will be added to and be used as part of a continuation integration setup when changes are merged into main.  Due to time restraints just ensured the tests are added and can execute them.
+This command runs all Bats tests located in the `tests/` folder. The output shows the results of each test. If a test passes, you'll see a line with a check mark and the test description. 
 
-Sample output of test results/output:
+If a test fails, you'll see a line with an "X" and the test description, along with an error message explaining what went wrong.
+
+Currently there are 9 test cases and these will be added to and be used as part of a continuous integration setup when changes are merged into main.
+
+Here's an example of what the output might look like:
 ```
-~/word-count-example$ bats  ./tests/
+~/word-count-example$ bats tests/
  ✓ Test with a regular file 
  ✓ Test with a same regular file in different order 
  ✓ Test with special characters 
  ✓ Test with empty file 
  ✓ Test with non-existing file 
+ ✓ Test with hyphens and punctuation 
+ ✓ Test with special characters and unicode characters 
+ ✓ Test against large files 
+ ✓ Test with special characters and numbers 
 
-5 tests, 0 failures
+9 tests, 0 failures
 ```
+In this example, all tests passed.
